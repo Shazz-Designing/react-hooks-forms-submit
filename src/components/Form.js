@@ -19,6 +19,17 @@ function Form(props) {
       <button type="submit">Submit</button>
     </form>
   );
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    const formData = {
+      firstName: firstName,
+      lastName: lastName,
+    };
+    props.sendFormDataSomewhere(formData);
+    setFirstName("");
+    setLastName("");
+  }
 }
 
 export default Form;
